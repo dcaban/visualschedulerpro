@@ -1,0 +1,10 @@
+.dashboard-nav {
+  .item:not(.header):not(.active) {
+    font-weight: bolder !important;
+    color: rgb(201,197,197) !important;
+  }
+
+  .item.header {
+    color: rgb(201,197,197) !important;
+  }
+}
