@@ -16,6 +16,7 @@ const Routes = () =>
       path="/dashboard"
       render={() => <Redirect to="/dashboard/daily" />}
     />
+
     <Route path={"/dashboard/daily"} component={Daily} />
     <Route path={"/dashboard/buy-stock"} component={BuyStock} />
     <Route path={"/dashboard/history"} component={History} />

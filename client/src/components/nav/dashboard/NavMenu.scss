@@ -7,4 +7,35 @@
   .item.header {
     color: rgb(201,197,197) !important;
   }
+
+  }
+i.icon {
+  background: 0 0!important;
+  color: rgb(30,37,50);
+}
+
+
+.ui.inverted.menu .active.item {
+  background: rgba(255,255,255,.15);
+  color: rgb(30,37,50)!important;
+}
+
+
+.ui.inverted.menu .item, .ui.inverted.menu .item>a:not(.ui) {
+  background: 0 0;
+  color: rgb(30,37,50)!important;
+}
+
+.ui.vertical.menu .item {
+  background: 0 0;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-right: none;
+  color: #c9c5c5 !important;
+}
+
+.ui.vertical.menu .active.item {
+
+
 }

@@ -24,19 +24,21 @@ class NavMenu extends Component {
     const date = this.props.date;
 
     const itemsToRender = [
+
       { name: "daily", onClick: this.navToRoute },
       { name: "history", onClick: this.navToRoute },
       { name: "buyStock", onClick: this.navToRoute },
       { name: "sellStock", onClick: this.navToRoute },
       { name: "addFunds", onClick: this.navToRoute },
-      { name: "userInfo", onClick: this.navToRoute, position: "right" },
+      { name: "userInfo", onClick: this.navToRoute},
       {
         name: "funds",
         header: true,
         headerContent: <div>Today's Date: <Moment format="MM/DD/YYYY">
              {Date.now()}
             </Moment>
-        </div>
+        </div>,
+          position: "bottom"
       }
     ];
 
@@ -47,7 +49,7 @@ class NavMenu extends Component {
 
   render() {
     return (
-      <Menu tabular attached="top" className="dashboard-nav">
+        <Menu vertical secondary >
         {this.renderMenuItems()}
       </Menu>
     );

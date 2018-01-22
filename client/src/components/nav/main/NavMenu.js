@@ -61,7 +61,7 @@ class NavMenu extends Component {
 
   render() {
     return (
-      <Menu className='nav-menu' stackable inverted size='huge'>
+      <Menu className='nav-menu' stackable size='huge'>
         {this.renderMenuItems()}
       </Menu>
     )
