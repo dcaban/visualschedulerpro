@@ -65,7 +65,7 @@ module.exports = (app) => {
   userRoutes.get('/info', requireAuth, UserController.getInfo);
   
   // Add funds route for user
-  userRoutes.put('/add-funds', requireAuth, UserController.addFunds);
+  userRoutes.put('/personal-schedule', requireAuth, UserController.personalSchedule);
 
   // Route for getting user's transaction history
   userRoutes.get('/history', requireAuth, UserController.getHistory);
@@ -87,8 +87,8 @@ module.exports = (app) => {
   stockRoutes.post('/quote', requireAuth, fetchStockPrice, StockController.quoteStock);
 
   // Route for buying stock for user
-  stockRoutes.post('/buy', requireAuth, fetchStockPrice, StockController.buyStock);
+  stockRoutes.post('/buy', requireAuth, fetchStockPrice, StockController.requests);
 
-  // Route for selling stock for user
-  stockRoutes.post('/sell', requireAuth, fetchStockPrice, StockController.sellStock);
+  // Route for teaming stock for user
+  stockRoutes.post('/team', requireAuth, fetchStockPrice, StockController.team);
 }

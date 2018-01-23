@@ -8,7 +8,7 @@ import { round } from "lodash";
 
 import { isPositiveInt } from "./helperFunctions";
 
-import { buyStock } from "../../actions/user";
+import { requests } from "../../actions/user";
 
 import { API_URL } from "../../constants";
 
@@ -47,7 +47,7 @@ const validate = (formProps, props) => {
   return errors;
 };
 
-class BuyStockForm extends Component {
+class RequestsForm extends Component {
   state = inititalState;
 
   handleFormSubmit = formProps => {
@@ -81,7 +81,7 @@ class BuyStockForm extends Component {
   };
 
   handlePurchaseClick = () => {
-    this.props.buyStock(this.state.quoteSymbol, this.state.numShares);
+    this.props.requests(this.state.quoteSymbol, this.state.numShares);
   };
 
   render() {
@@ -136,8 +136,8 @@ const mapStateToProps = state => {
 };
 
 const createForm = reduxForm({
-  form: "buyStockForm",
+  form: "requestsForm",
   validate
 });
 
-export default connect(mapStateToProps, { buyStock })(createForm(BuyStockForm));
+export default connect(mapStateToProps, { requests })(createForm(RequestsForm));

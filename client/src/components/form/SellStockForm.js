@@ -6,7 +6,7 @@ import { Form, Message } from "semantic-ui-react";
 
 import { isPositiveInt } from "./helperFunctions";
 
-import { sellStock } from "../../actions/user";
+import { team } from "../../actions/user";
 
 import renderFields from "./renderFields";
 
@@ -37,8 +37,8 @@ const mapStockOptions = daily => {
   });
 };
 
-class SellStockForm extends Component {
-  state = { stockOptions: [], selectedStock: null, sellStockSuccess: false };
+class TeamForm extends Component {
+  state = { stockOptions: [], selectedStock: null, teamSuccess: false };
 
   componentDidMount() {
     this.setState({ stockOptions: mapStockOptions(this.props.daily) });
@@ -53,7 +53,7 @@ class SellStockForm extends Component {
   };
 
   handleFormSubmit = formProps => {
-    this.props.sellStock(
+    this.props.team(
       this.state.selectedStock.stockSymbol,
       formProps.numberOfShares
     );
@@ -90,20 +90,20 @@ class SellStockForm extends Component {
     }
   };
 
-  renderSellForm = () => {
+  renderTeamForm = () => {
     const stock = this.state.selectedStock;
-    const { handleSubmit, sellStockErrorMessage } = this.props;
-    const sellStockContainsError = sellStockErrorMessage.length > 0;
+    const { handleSubmit, teamErrorMessage } = this.props;
+    const teamContainsError = teamErrorMessage.length > 0;
 
     if (stock) {
       return (
         <Form
-          error={sellStockContainsError}
+          error={teamContainsError}
           onSubmit={handleSubmit(this.handleFormSubmit)}
         >
           {renderFields(inputFields)}
-          <Form.Button>Sell Stock</Form.Button>
-          <Message error content={sellStockErrorMessage} />
+          <Form.Button>Team Stock</Form.Button>
+          <Message error content={teamErrorMessage} />
         </Form>
       );
     }
@@ -115,7 +115,7 @@ class SellStockForm extends Component {
     return (
       <Grid stackable columns={2} divided>
         <Grid.Column>
-          <Header size="medium">Stock to sell</Header>
+          <Header size="medium">Stock to team</Header>
           <Dropdown
             placeholder="Select a Stock"
             search
@@ -125,7 +125,7 @@ class SellStockForm extends Component {
             onChange={this.handleStockSelection}
           />
           <br />
-          {this.renderSellForm()}
+          {this.renderTeamForm()}
         </Grid.Column>
         <Grid.Column>
           <Header size="medium">Selected Stock Info</Header>
@@ -137,14 +137,14 @@ class SellStockForm extends Component {
 }
 
 const mapStateToProps = state => {
-  return { sellStockErrorMessage: state.auth.error };
+  return { teamErrorMessage: state.auth.error };
 };
 
 const createForm = reduxForm({
-  form: "sellStock",
+  form: "team",
   validate
 });
 
-export default connect(mapStateToProps, { sellStock })(
-  createForm(SellStockForm)
+export default connect(mapStateToProps, { team })(
+  createForm(TeamForm)
 );

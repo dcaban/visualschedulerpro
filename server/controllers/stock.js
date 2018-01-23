@@ -48,7 +48,7 @@ exports.quoteStock = (req, res, next) => {
 //========================================
 // Buy Stock Route for User
 //========================================
-exports.buyStock = (req, res, next) => {
+exports.requests = (req, res, next) => {
   // Set transaction values to desired format/types from body and locals
   const transaction = formatTransaction(req.body, res.locals);
 
@@ -102,9 +102,9 @@ exports.buyStock = (req, res, next) => {
 };
 
 //========================================
-// Sell Stock Route for User
+// Team Stock Route for User
 //========================================
-exports.sellStock = (req, res, next) => {
+exports.team = (req, res, next) => {
   // Set transaction values to desired format/types from body and locals
   const transaction = formatTransaction(req.body, res.locals);
 

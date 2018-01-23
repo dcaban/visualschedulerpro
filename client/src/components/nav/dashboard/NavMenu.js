@@ -12,7 +12,7 @@ import MenuItem from "../MenuItem";
 
 class NavMenu extends Component {
   navToRoute = (e, { name }) => {
-    // convert name to dash case (ie. add-funds)
+    // convert name to dash case (ie. personal-schedule)
     const route = kebabCase(name);
     this.props.changeRoute(`/dashboard/${route}`);
   };
@@ -27,9 +27,9 @@ class NavMenu extends Component {
 
       { name: "daily", onClick: this.navToRoute },
       { name: "history", onClick: this.navToRoute },
-      { name: "buyStock", onClick: this.navToRoute },
-      { name: "sellStock", onClick: this.navToRoute },
-      { name: "addFunds", onClick: this.navToRoute },
+      { name: "requests", onClick: this.navToRoute },
+      { name: "team", onClick: this.navToRoute },
+      { name: "personalSchedule", onClick: this.navToRoute },
       { name: "userInfo", onClick: this.navToRoute},
       {
         name: "funds",

@@ -5,7 +5,7 @@ import { Form, Icon, Message } from "semantic-ui-react";
 
 import { countDecimals } from "./helperFunctions";
 
-import { addFunds } from "../../actions/user";
+import { personalSchedule } from "../../actions/user";
 
 import renderFields from "./renderFields";
 
@@ -24,7 +24,7 @@ const validate = formProps => {
   return errors;
 };
 
-class AddFunds extends Component {
+class PersonalSchedule extends Component {
   state = {
     addFundSuccess: false
   };
@@ -38,7 +38,7 @@ class AddFunds extends Component {
 
   handleFormSubmit = formProps => {
     this.setState({ addFundSuccess: false });
-    this.props.addFunds(formProps.fundAmount);
+    this.props.personalSchedule(formProps.fundAmount);
   };
 
   render() {
@@ -68,8 +68,8 @@ const mapStateToProps = state => {
 };
 
 const createForm = reduxForm({
-  form: "addFunds",
+  form: "personalSchedule",
   validate
 });
 
-export default connect(mapStateToProps, { addFunds })(createForm(AddFunds));
+export default connect(mapStateToProps, { personalSchedule })(createForm(PersonalSchedule));

@@ -9,12 +9,12 @@ import { API_URL } from "../constants";
 //= =====================
 // User Action Creators
 //= =====================
-export function addFunds(fundAmount) {
+export function personalSchedule(fundAmount) {
   return function(dispatch) {
     const headers = { headers: { Authorization: cookie.load("token") } };
 
     axios
-      .put(`${API_URL}/user/add-funds`, { fundAmount }, headers)
+      .put(`${API_URL}/user/personal-schedule`, { fundAmount }, headers)
       .then(response => {
         // Update user
         dispatch({
@@ -30,7 +30,7 @@ export function addFunds(fundAmount) {
   };
 }
 
-export function buyStock(stockSymbol, shares) {
+export function requests(stockSymbol, shares) {
   return function(dispatch) {
     const reqBody = {
       stockSymbol,
@@ -59,7 +59,7 @@ export function buyStock(stockSymbol, shares) {
   };
 }
 
-export function sellStock(stockSymbol, shares) {
+export function team(stockSymbol, shares) {
   return function(dispatch) {
     const reqBody = {
       stockSymbol,
@@ -69,7 +69,7 @@ export function sellStock(stockSymbol, shares) {
     const headers = { headers: { Authorization: cookie.load("token") } };
 
     axios
-      .post(`${API_URL}/user/stock/sell`, reqBody, headers)
+      .post(`${API_URL}/user/stock/team`, reqBody, headers)
       .then(response => {
         // Update user
         dispatch({

@@ -6,7 +6,7 @@ import { changeRoute } from "../../../actions/utility";
 
 class NoStockInDaily extends Component {
   handleClick = () => {
-    this.props.changeRoute("/dashboard/buy-stock");
+    this.props.changeRoute("/dashboard/requests");
   };
 
   render() {

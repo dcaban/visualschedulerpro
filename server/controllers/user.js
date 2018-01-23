@@ -18,7 +18,7 @@ exports.getInfo = (req, res) => {
 //========================================
 // User Add Funds Route
 //========================================
-exports.addFunds = (req, res, next) => {
+exports.personalSchedule = (req, res, next) => {
   const fundAmount = parseFloat(req.body.fundAmount);
 
   // Return error if fund amount is not valid
