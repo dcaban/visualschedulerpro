@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Col, Row} from 'react-materialize';
+import {Col, Input, Row, Button, Table} from 'react-materialize';
 
 export default class Daily extends Component {
 
@@ -7,18 +7,46 @@ export default class Daily extends Component {
         return (
             <div>
                 <Row>
-                    <Col s={1} className='grid-example'>1</Col>
-                    <Col s={1} className='grid-example'>2</Col>
-                    <Col s={1} className='grid-example'>3</Col>
-                    <Col s={1} className='grid-example'>4</Col>
-                    <Col s={1} className='grid-example'>5</Col>
-                    <Col s={1} className='grid-example'>6</Col>
-                    <Col s={1} className='grid-example'>7</Col>
-                    <Col s={1} className='grid-example'>8</Col>
-                    <Col s={1} className='grid-example'>9</Col>
-                    <Col s={1} className='grid-example'>10</Col>
-                    <Col s={1} className='grid-example'>11</Col>
-                    <Col s={1} className='grid-example'>12</Col>
+                        <Row>
+                            <h1>Select day to request off</h1>
+                        </Row>
+                        <Row>
+                            <Col s='4'>
+                                <Input placeholder="Click to select date" name='on' type='date' onChange={function(e, value) {}} />
+                            </Col>
+                            <Col s='4'>
+                            <Button floating large className='teal' waves='light' icon='add' />
+                            </Col>
+                        </Row>
+                    <Row>
+                        <Table>
+                            <thead>
+                            <tr>
+                                <th data-field="id">Name<a>  v</a></th>
+                                <th data-field="name">Date Requested<a>  v</a></th>
+                                <th data-field="price">Date Inputed <a>  v</a></th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Alvin C</td>
+                                <td>01/10/2018</td>
+                                <td>1/31/2018 08:15</td>
+                            </tr>
+                            <tr>
+                                <td>Alvin C</td>
+                                <td>1/11/2018</td>
+                                <td>1/31/2018 08:15</td>
+                            </tr>
+                            <tr>
+                                <td>Jonathan</td>
+                                <td>1/31/2018</td>
+                                <td>1/31/2018 08:15</td>
+                            </tr>
+                            </tbody>
+                        </Table>
+                    </Row>
                 </Row>
             </div>
         );

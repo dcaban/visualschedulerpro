@@ -5,17 +5,21 @@ const mongoose = require('mongoose'),
 // Daily Schema
 //================================
 const DailySchema = new Schema({
-  // Stock ticker name
-  stockSymbol: {
+
+  user_id: {
     type: String,
     uppercase: true,
     required: true
   },
-  stockName: {
+  date: {
+    type:Date
+
+  },
+  startTime: {
     type: String,
     required: true
   },
-  totalShares: {
+  endTime: {
     type: Number,
     min: 0,
     required: true
