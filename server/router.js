@@ -2,8 +2,9 @@ const express = require('express'),
       passportService = require('./config/passport'),
       passport = require('passport'),
       AuthenticationController = require('./controllers/authentication'),
-      UserController = require('./controllers/user'),
-      StockController = require('./controllers/stock');
+      UserController = require('./controllers/user')
+      // StockController = require('./controllers/stock');
+
 
 // Middleware to require auth
 const requireAuth = passport.authenticate('jwt', { session: false });
@@ -78,17 +79,17 @@ module.exports = (app) => {
   //=========================
   
   // Async middleware for getting stock price (stored at res.locals.stockPrice)
-  const fetchStockPrice = StockController.fetchStockPrice;
+  // const fetchStockPrice = StockController.fetchStockPrice;
 
   // Set stock routes as subgroup/middleware to userRoutes
   userRoutes.use('/stock', stockRoutes);
 
-  // Route for quoting stock
-  stockRoutes.post('/quote', requireAuth, fetchStockPrice, StockController.quoteStock);
-
-  // Route for buying stock for user
-  stockRoutes.post('/buy', requireAuth, fetchStockPrice, StockController.requests);
-
-  // Route for teaming stock for user
-  stockRoutes.post('/team', requireAuth, fetchStockPrice, StockController.team);
+  // // Route for quoting stock
+  // stockRoutes.post('/quote', requireAuth, fetchStockPrice, StockController.quoteStock);
+  //
+  // // Route for buying stock for user
+  // stockRoutes.post('/buy', requireAuth, fetchStockPrice, StockController.requests);
+  //
+  // // Route for teaming stock for user
+  // stockRoutes.post('/team', requireAuth, fetchStockPrice, StockController.team);
 }

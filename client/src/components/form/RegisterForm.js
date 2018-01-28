@@ -12,6 +12,7 @@ import Checkbox from "./Checkbox";
 const inputFields = [
   { name: "firstName", type: "text" },
   { name: "lastName", type: "text" },
+  { name: "email", type: "email" },
   { name: "username", type: "text" },
   { name: "password", type: "password" },
   { name: "confirmPassword", type: "password" }

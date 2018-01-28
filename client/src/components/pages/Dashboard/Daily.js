@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-// import ReactDOM from 'react-dom';
-// import Slider, { Range } from 'rc-slider';
-//
-// import 'rc-slider/assets/index.css';
-//
-
-
-
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
-import ReactDOM from 'react-dom';
 import Tooltip from 'rc-tooltip';
 import Slider from 'rc-slider';
+
+import {Col, Row, Button, Input} from 'react-materialize';
 
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
@@ -42,21 +35,22 @@ function log(value) {
     console.log("put into database")
 }
 
-const marks = {
-    '-10': '-10°C',
-    0: <strong>0°C</strong>,
-    26: '26°C',
-    37: '37°C',
-    50: '50°C',
-    100: {
-        style: {
-            color: 'red',
-        },
-        label: <strong>100°C</strong>,
-    },
+
+let divStyle = {
+    color: 'white',
+    backgroundColor: '#273141 ',
+    display: 'inline-block',
+    width: "6.25%"
+
 };
+let divStyle2 = {
+    color: 'white',
+    backgroundColor: '#545F72 ',
+    display: 'inline-block',
+    width: "6.25%",
 
 
+};
 
 
 
@@ -70,9 +64,11 @@ export default class Daily extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            lowerBound: 20,
-            upperBound: 40,
-            value: [20, 40],
+            lowerBound: 9,
+            upperBound: 17,
+            value: [9, 17],
+            min: 7,
+            max: 23,
         };
     }
     onLowerBoundChange = (e) => {
@@ -92,6 +88,19 @@ export default class Daily extends Component {
         this.setState({ value: [lowerBound, upperBound] });
     }
 
+    onMinChange = (e) => {
+        this.setState({
+            min: +e.target.value || 0,
+        });
+    }
+    onMaxChange = (e) => {
+        this.setState({
+            max: +e.target.value || 100,
+        });
+    }
+
+
+
 
 
     render() {
@@ -99,17 +108,147 @@ export default class Daily extends Component {
 
 
         <div>
-            <label>StartTime: </label>
-            <input type="number" value={this.state.lowerBound} onChange={this.onLowerBoundChange} />
-            <br />
-            <label>EndTime: </label>
-            <input type="number" value={this.state.upperBound} onChange={this.onUpperBoundChange} />
-            <br />
-            <button onClick={this.handleApply}>Apply</button>
-            <br /><br />
-            <Range allowCross={false} value={this.state.value} onChange={this.onSliderChange} />
+            {/*<Row>*/}
 
-                <Range min={0} max={24} defaultValue={[3, 10]} tipFormatter={value => `${value}:00`} />
+                {/*<Input label="Start of day" type="select" value={parseInt(this.state.min)} onChange={this.onMinChange}>*/}
+                    {/*<option value='1'>1a</option>*/}
+                    {/*<option value='2'>2a</option>*/}
+                    {/*<option value='3'>3a</option>*/}
+                    {/*<option value='4'>4a</option>*/}
+                    {/*<option value='5'>5a</option>*/}
+                    {/*<option value='6'>6a</option>*/}
+                    {/*<option value='7'>7a</option>*/}
+                    {/*<option value='8'>8a</option>*/}
+                    {/*<option value='9'>9a</option>*/}
+                    {/*<option value='10'>10a</option>*/}
+                    {/*<option value='11'>11a</option>*/}
+                    {/*<option value='12'>12p</option>*/}
+                    {/*<option value='13'>1p</option>*/}
+                    {/*<option value='14'>2p</option>*/}
+                    {/*<option value='15'>3p</option>*/}
+                    {/*<option value='16'>4p</option>*/}
+                    {/*<option value='17'>5p</option>*/}
+                    {/*<option value='18'>6p</option>*/}
+                    {/*<option value='19'>7p</option>*/}
+                    {/*<option value='20'>8p</option>*/}
+                    {/*<option value='21'>9p</option>*/}
+                    {/*<option value='22'>10p</option>*/}
+                    {/*<option value='23'>11p</option>*/}
+                    {/*<option value='24'>12a</option>*/}
+                {/*</Input>*/}
+
+                {/*<Input label="End of day" type="select" value={parseInt(this.state.max)} onChange={this.onMaxChange}>*/}
+                    {/*<option value='1'>1a</option>*/}
+                    {/*<option value='2'>2a</option>*/}
+                    {/*<option value='3'>3a</option>*/}
+                    {/*<option value='4'>4a</option>*/}
+                    {/*<option value='5'>5a</option>*/}
+                    {/*<option value='6'>6a</option>*/}
+                    {/*<option value='7'>7a</option>*/}
+                    {/*<option value='8'>8a</option>*/}
+                    {/*<option value='9'>9a</option>*/}
+                    {/*<option value='10'>10a</option>*/}
+                    {/*<option value='11'>11a</option>*/}
+                    {/*<option value='12'>12p</option>*/}
+                    {/*<option value='13'>1p</option>*/}
+                    {/*<option value='14'>2p</option>*/}
+                    {/*<option value='15'>3p</option>*/}
+                    {/*<option value='16'>4p</option>*/}
+                    {/*<option value='17'>5p</option>*/}
+                    {/*<option value='18'>6p</option>*/}
+                    {/*<option value='19'>7p</option>*/}
+                    {/*<option value='20'>8p</option>*/}
+                    {/*<option value='21'>9p</option>*/}
+                    {/*<option value='22'>10p</option>*/}
+                    {/*<option value='23'>11p</option>*/}
+                    {/*<option value='24'>12a</option>*/}
+                {/*</Input>*/}
+            {/*</Row>*/}
+            <Row>
+
+                <Col s={"2"}>
+            <label>StartTime: </label>
+            <Input type="select" value={parseInt(this.state.lowerBound)} onChange={this.onLowerBoundChange} >
+                <option value='1'>1a</option>
+                <option value='2'>2a</option>
+                <option value='3'>3a</option>
+                <option value='4'>4a</option>
+                <option value='5'>5a</option>
+                <option value='6'>6a</option>
+                <option value='7'>7a</option>
+                <option value='8'>8a</option>
+                <option value='9'>9a</option>
+                <option value='10'>10a</option>
+                <option value='11'>11a</option>
+                <option value='12'>12p</option>
+                <option value='13'>1p</option>
+                <option value='14'>2p</option>
+                <option value='15'>3p</option>
+                <option value='16'>4p</option>
+                <option value='17'>5p</option>
+                <option value='18'>6p</option>
+                <option value='19'>7p</option>
+                <option value='20'>8p</option>
+                <option value='21'>9p</option>
+                <option value='22'>10p</option>
+                <option value='23'>11p</option>
+                <option value='24'>12a</option>
+
+            </Input>
+            <label>EndTime: </label>
+                    <Input type="select" value={parseInt(this.state.upperBound)} onChange={this.onUpperBoundChange}>
+                        <option value='1'>1a</option>
+                        <option value='2'>2a</option>
+                        <option value='3'>3a</option>
+                        <option value='4'>4a</option>
+                        <option value='5'>5a</option>
+                        <option value='6'>6a</option>
+                        <option value='7'>7a</option>
+                        <option value='8'>8a</option>
+                        <option value='9'>9a</option>
+                        <option value='10'>10a</option>
+                        <option value='11'>11a</option>
+                        <option value='12'>12p</option>
+                        <option value='13'>1p</option>
+                        <option value='14'>2p</option>
+                        <option value='15'>3p</option>
+                        <option value='16'>4p</option>
+                        <option value='17'>5p</option>
+                        <option value='18'>6p</option>
+                        <option value='19'>7p</option>
+                        <option value='20'>8p</option>
+                        <option value='21'>9p</option>
+                        <option value='22'>10p</option>
+                        <option value='23'>11p</option>
+                        <option value='24'>12a</option>
+                    </Input>
+                </Col>
+            </Row>
+            <Button onClick={this.handleApply}>Apply</Button>
+
+
+            <Row className={"timeGrid"}>
+                <div style={divStyle}>7a</div>
+                <div style={divStyle2}>8a</div>
+                <div style={divStyle}>9a</div>
+                <div style={divStyle2}>10a</div>
+                <div style={divStyle}>11a</div>
+                <div style={divStyle2}>12p</div>
+                <div style={divStyle}>1p</div>
+                <div style={divStyle2}>2p</div>
+                <div style={divStyle}>3p</div>
+                <div style={divStyle2}>4p</div>
+                <div style={divStyle}>5p</div>
+                <div style={divStyle2}>6p</div>
+                <div style={divStyle}>7p</div>
+                <div style={divStyle2}>8p</div>
+                <div style={divStyle}>9p</div>
+                <div style={divStyle2}>10p</div>
+            </Row>
+
+        <Row>
+            <Range allowCross={false} min={7} max={23} step={.25} value={this.state.value} onChange={this.onSliderChange} />
+            </Row>
 
             <h1>{this.state.value[0] + "  " + this.state.value[1]}</h1>
         </div>
@@ -119,4 +258,5 @@ export default class Daily extends Component {
 
     )
     }
+
 }

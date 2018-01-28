@@ -39,6 +39,7 @@ exports.register = (req, res, next) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const password = req.body.password;
+    const email = req.body.email;
 
   // Return error if no username provided
   if (!username) {
@@ -67,6 +68,7 @@ exports.register = (req, res, next) => {
       let user = new User({
         username: username,
         password: password,
+          email: email,
         profile: { firstName: firstName, lastName: lastName }
       });
 

@@ -16,7 +16,7 @@ const DailySchema = new Schema({
 
   },
   startTime: {
-    type: String,
+    type: Number,
     required: true
   },
   endTime: {
