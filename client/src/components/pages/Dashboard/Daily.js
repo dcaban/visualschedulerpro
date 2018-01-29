@@ -3,8 +3,10 @@ import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
 import Tooltip from 'rc-tooltip';
 import Slider from 'rc-slider';
+import "./NotHomePage.css";
 
 import {Col, Row, Button, Input} from 'react-materialize';
+
 
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
@@ -40,15 +42,25 @@ let divStyle = {
     color: 'white',
     backgroundColor: '#273141 ',
     display: 'inline-block',
-    width: "6.25%"
+    width: "5%",
+    height: "30px",
 
 };
 let divStyle2 = {
     color: 'white',
     backgroundColor: '#545F72 ',
     display: 'inline-block',
-    width: "6.25%",
+    width: "5%",
+    height: "30px",
 
+
+};
+let spacer = {
+    color: '#545F72',
+    backgroundColor: '#545F72',
+    display: 'inline-block',
+    width: "20%",
+    height: "30px",
 
 };
 
@@ -164,70 +176,70 @@ export default class Daily extends Component {
                     {/*<option value='24'>12a</option>*/}
                 {/*</Input>*/}
             {/*</Row>*/}
-            <Row>
+            {/*<Row>*/}
 
-                <Col s={"2"}>
-            <label>StartTime: </label>
-            <Input type="select" value={parseInt(this.state.lowerBound)} onChange={this.onLowerBoundChange} >
-                <option value='1'>1a</option>
-                <option value='2'>2a</option>
-                <option value='3'>3a</option>
-                <option value='4'>4a</option>
-                <option value='5'>5a</option>
-                <option value='6'>6a</option>
-                <option value='7'>7a</option>
-                <option value='8'>8a</option>
-                <option value='9'>9a</option>
-                <option value='10'>10a</option>
-                <option value='11'>11a</option>
-                <option value='12'>12p</option>
-                <option value='13'>1p</option>
-                <option value='14'>2p</option>
-                <option value='15'>3p</option>
-                <option value='16'>4p</option>
-                <option value='17'>5p</option>
-                <option value='18'>6p</option>
-                <option value='19'>7p</option>
-                <option value='20'>8p</option>
-                <option value='21'>9p</option>
-                <option value='22'>10p</option>
-                <option value='23'>11p</option>
-                <option value='24'>12a</option>
+                {/*<Col s={"2"}>*/}
+            {/*<label>StartTime: </label>*/}
+            {/*<Input type="select" value={parseInt(this.state.lowerBound)} onChange={this.onLowerBoundChange} >*/}
+                {/*<option value='1'>1a</option>*/}
+                {/*<option value='2'>2a</option>*/}
+                {/*<option value='3'>3a</option>*/}
+                {/*<option value='4'>4a</option>*/}
+                {/*<option value='5'>5a</option>*/}
+                {/*<option value='6'>6a</option>*/}
+                {/*<option value='7'>7a</option>*/}
+                {/*<option value='8'>8a</option>*/}
+                {/*<option value='9'>9a</option>*/}
+                {/*<option value='10'>10a</option>*/}
+                {/*<option value='11'>11a</option>*/}
+                {/*<option value='12'>12p</option>*/}
+                {/*<option value='13'>1p</option>*/}
+                {/*<option value='14'>2p</option>*/}
+                {/*<option value='15'>3p</option>*/}
+                {/*<option value='16'>4p</option>*/}
+                {/*<option value='17'>5p</option>*/}
+                {/*<option value='18'>6p</option>*/}
+                {/*<option value='19'>7p</option>*/}
+                {/*<option value='20'>8p</option>*/}
+                {/*<option value='21'>9p</option>*/}
+                {/*<option value='22'>10p</option>*/}
+                {/*<option value='23'>11p</option>*/}
+                {/*<option value='24'>12a</option>*/}
 
-            </Input>
-            <label>EndTime: </label>
-                    <Input type="select" value={parseInt(this.state.upperBound)} onChange={this.onUpperBoundChange}>
-                        <option value='1'>1a</option>
-                        <option value='2'>2a</option>
-                        <option value='3'>3a</option>
-                        <option value='4'>4a</option>
-                        <option value='5'>5a</option>
-                        <option value='6'>6a</option>
-                        <option value='7'>7a</option>
-                        <option value='8'>8a</option>
-                        <option value='9'>9a</option>
-                        <option value='10'>10a</option>
-                        <option value='11'>11a</option>
-                        <option value='12'>12p</option>
-                        <option value='13'>1p</option>
-                        <option value='14'>2p</option>
-                        <option value='15'>3p</option>
-                        <option value='16'>4p</option>
-                        <option value='17'>5p</option>
-                        <option value='18'>6p</option>
-                        <option value='19'>7p</option>
-                        <option value='20'>8p</option>
-                        <option value='21'>9p</option>
-                        <option value='22'>10p</option>
-                        <option value='23'>11p</option>
-                        <option value='24'>12a</option>
-                    </Input>
-                </Col>
-            </Row>
-            <Button onClick={this.handleApply}>Apply</Button>
-
+            {/*</Input>*/}
+            {/*<label>EndTime: </label>*/}
+                    {/*<Input type="select" value={parseInt(this.state.upperBound)} onChange={this.onUpperBoundChange}>*/}
+                        {/*<option value='1'>1a</option>*/}
+                        {/*<option value='2'>2a</option>*/}
+                        {/*<option value='3'>3a</option>*/}
+                        {/*<option value='4'>4a</option>*/}
+                        {/*<option value='5'>5a</option>*/}
+                        {/*<option value='6'>6a</option>*/}
+                        {/*<option value='7'>7a</option>*/}
+                        {/*<option value='8'>8a</option>*/}
+                        {/*<option value='9'>9a</option>*/}
+                        {/*<option value='10'>10a</option>*/}
+                        {/*<option value='11'>11a</option>*/}
+                        {/*<option value='12'>12p</option>*/}
+                        {/*<option value='13'>1p</option>*/}
+                        {/*<option value='14'>2p</option>*/}
+                        {/*<option value='15'>3p</option>*/}
+                        {/*<option value='16'>4p</option>*/}
+                        {/*<option value='17'>5p</option>*/}
+                        {/*<option value='18'>6p</option>*/}
+                        {/*<option value='19'>7p</option>*/}
+                        {/*<option value='20'>8p</option>*/}
+                        {/*<option value='21'>9p</option>*/}
+                        {/*<option value='22'>10p</option>*/}
+                        {/*<option value='23'>11p</option>*/}
+                        {/*<option value='24'>12a</option>*/}
+                    {/*</Input>*/}
+                {/*</Col>*/}
+            {/*</Row>*/}
+            {/*<Button onClick={this.handleApply}>Apply</Button>*/}
 
             <Row className={"timeGrid"}>
+                <div style={spacer}>.</div>
                 <div style={divStyle}>7a</div>
                 <div style={divStyle2}>8a</div>
                 <div style={divStyle}>9a</div>
@@ -245,12 +257,24 @@ export default class Daily extends Component {
                 <div style={divStyle}>9p</div>
                 <div style={divStyle2}>10p</div>
             </Row>
+            <Row className={"sliderArea"}>
 
-        <Row>
+            <div className={"name"}>
+                <p className={"startTimeEndTime"}>David Caban <br/>{this.state.value[0] + "-" + this.state.value[1] + " | "}
+                {this.state.value[1] - this.state.value[0] + " hr"}</p>
+            </div>
+
+           <div className={"mainDaily"}>
+
+
+
             <Range allowCross={false} min={7} max={23} step={.25} value={this.state.value} onChange={this.onSliderChange} />
+
+
+           </div>
             </Row>
 
-            <h1>{this.state.value[0] + "  " + this.state.value[1]}</h1>
+
         </div>
 
 

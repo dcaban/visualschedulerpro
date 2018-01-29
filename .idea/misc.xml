@@ -3,4 +3,16 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="JSX" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/client/src/components/form/AddFundForm.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/BuyStockForm.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/Checkbox.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/helperFunctions.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/LoginForm.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/QuoteStockForm.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/RegisterForm.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/RenderField.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/renderFields.js" />
+    <file url="file://$PROJECT_DIR$/client/src/components/form/SellStockForm.js" />
+  </component>
 </project>
