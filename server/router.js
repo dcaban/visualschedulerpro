@@ -74,6 +74,8 @@ module.exports = (app) => {
   // Route for getting user's daily with current stock prices
   userRoutes.get('/daily', requireAuth, UserController.getDaily);
 
+
+
   //=========================
   // Stock Routes (/api/user/stock)
   //=========================
@@ -83,6 +85,7 @@ module.exports = (app) => {
 
   // Set stock routes as subgroup/middleware to userRoutes
   userRoutes.use('/stock', stockRoutes);
+
 
   // // Route for quoting stock
   // stockRoutes.post('/quote', requireAuth, fetchStockPrice, StockController.quoteStock);

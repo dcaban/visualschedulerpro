@@ -1,7 +1,74 @@
-.layout-container{
-  display:none!important;
+
+
+p{
+  color: white;
 }
 
-h2{
+.homepageArea {
+position:absolute;
+  left: 0px!important;
+  top:0px!important;
+  width: 100vw;
+  z-index: 5;
+}
+
+.login {
+  position: absolute;
+  top:100px;
+  right: 0;
+  margin-bottom: -200px;
+  height: 35px;
+  width: 200px;
+  background-color: #2d416a;
   color: white;
+  padding: 8px 9px 0px 30px;
+  border-radius: 0px 5px 5px 30px;
+}
+.register {
+  position: absolute;
+  top:70px;
+  right: 0;
+  margin-bottom: -200px;
+  height: 35px;
+  width: 200px;
+  background-color: #2d416a;
+  color: white;
+  padding: 8px 9px 0px 30px;
+  border-radius: 30px 5px 5px 0px;
+}
+
+a{
+  z-index: 5;
+}
+
+.onParallaxImage{
+  margin-bottom: -120px;
+  color: white;
+}
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  height: 820px;
+}
+
+.firstImage{
+  height: 110vh!important;
+}
+
+.onFirstImage{
+  position: relative;
+  bottom: -20vh;
+  margin-bottom: -133px;
+  color:white;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.circle{
+  display: inline-flex;
+  background-color: white;
+  height: 160px;
+  width: 160px;
+  margin: 20px;
+  padding: 20px 10px 20px 5px;
 }

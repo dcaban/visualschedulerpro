@@ -4,6 +4,7 @@ import Routes from '../pages/Routes';
 
 
 const MainContent = () => (
+
     <Routes />
 );
 
