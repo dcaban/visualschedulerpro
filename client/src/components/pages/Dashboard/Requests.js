@@ -1,7 +1,31 @@
 import React, { Component } from "react";
+import axios from "axios";
+import { API_URL } from "../../../constants";
 import {Col, Input, Row, Button, Table} from 'react-materialize';
 
+
 export default class Daily extends Component {
+
+    //constructor with state set
+    constructor(props) {
+        super(props);
+        let defaultValue = this.props.defaultValue || '';
+        this.state = { value: defaultValue,  renderedValue: defaultValue};
+
+    }
+
+
+    //handler goes here for button click
+
+    handleClick = () => {
+        let dayOff =   document.getElementById("dayOff");
+
+        console.log(dayOff);
+    }
+
+
+
+
 
     render() {
         return (
@@ -12,10 +36,10 @@ export default class Daily extends Component {
                         </Row>
                         <Row>
                             <Col s='4'>
-                                <Input placeholder="Click to select date" name='on' type='date' onChange={function(e, value) {}} />
+                                <Input placeholder="Click to select date" name='on' type='date' id='dayOff'  onChange={function(e, value) {}} />
                             </Col>
                             <Col s='4'>
-                            <Button floating large className='teal' waves='light' icon='add' />
+                            <Button floating large className='teal' waves='light' icon='add' onClick={this.handleClick} />
                             </Col>
                         </Row>
                     <Row>
